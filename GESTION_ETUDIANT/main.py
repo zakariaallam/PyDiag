@@ -1,24 +1,21 @@
-name_etudiant = input("Nom: ")
-prenom_etudiant = input("prénom: ")
-notes_etudiant = []
-coefficients_notes = []
+Etudiants = []
 
-def notes():
+def notes(etudiant):
     i=1
     while i<=3:
         note = float(input(f"entre la note {i}: "))
         coefficient = float(input(f"entre le coefficient de cette note: "))
-        notes_etudiant.append(note)
-        coefficients_notes.append(coefficient)
+        etudiant["note"].append(note)
+        etudiant["coefficients"].append(coefficient)
         i= i+1
 
 
-def moyen(notes_etudiant):
+def moyen(etudiant):
     somme = 0
     soome_coeffisients = 0
-    for i ,note in enumerate(notes_etudiant):
-        somme += note * coefficients_notes[i]
-        soome_coeffisients += coefficients_notes[i]
+    for i ,note in enumerate(etudiant['note']):
+        somme += note * etudiant['coefficients'][i]
+        soome_coeffisients += etudiant['coefficients'][i]
     
     return somme/soome_coeffisients
 
@@ -33,10 +30,48 @@ def mention(moyen):
         return "Trea Bien"
     
 def affichage():
-    print(f"Nom : {name_etudiant}")
-    print(f"prénom : {name_etudiant}")
-    print(f"moyen : {moyen(notes_etudiant)}")
-    print(f"mention : {mention(moyen(notes_etudiant))}")
+    if len(Etudiants) == 0:
+        print("Aucun Etudiant")
+        return
+    for etudiant in Etudiants:
+        print(f"Nom : {etudiant['nom']}")
+        print(f"prénom : {etudiant['prenom']}")
+        print(f"moyen : {moyen(etudiant)}")
+        print(f"mention : {mention(moyen(etudiant))}")
     
-notes()
-affichage()    
+def Ajoute():
+    name_etudiant = input("Nom: ")
+    prenom_etudiant = input("prénom: ")
+    etudiant = {
+        'nom' : name_etudiant,
+        'prenom' : prenom_etudiant,
+        'note' : [],
+        'coefficients' : []
+    }
+    notes(etudiant)
+    Etudiants.append(etudiant)
+    
+def menu():
+    while True:
+        print("\n========================")
+        print("     GESTION ETUDIANT   ")
+        print("========================")
+        print("1. Ajouter étudiant")
+        print("2. Afficher classemen")
+        print("3. structures")
+        print("4. Quitter")    
+
+        choix = input("entrer votre choix: ")
+        
+        match choix:
+            case "1":
+                Ajoute()
+            case "2":
+                affichage()
+            case "3":
+                print("e")
+            case "4":
+                print("Au revoir !")
+                break            
+   
+menu()   
