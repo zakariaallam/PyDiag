@@ -50,7 +50,23 @@ def Ajoute():
     }
     notes(etudiant)
     Etudiants.append(etudiant)
+
+def regrouper_par_mention():
+    regroup = {}
+    for e in Etudiants:
+        moyenne = moyen(e)
+        mentione = mention(moyenne)
+        if mentione not in regroup:
+            regroup[mentione] = []
+        regroup[mentione].append(e | {"moyenne": 12.0})
+        
+        
+    Affichier_gegroup(regroup)  
     
+def Affichier_gegroup(regroup):
+    for k , v in regroup.items() :
+        print(f"{k} : {v}")
+        
 def menu():
     while True:
         print("\n========================")
@@ -69,7 +85,7 @@ def menu():
             case "2":
                 affichage()
             case "3":
-                print("e")
+                regrouper_par_mention()
             case "4":
                 print("Au revoir !")
                 break            
