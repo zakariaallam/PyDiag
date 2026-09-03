@@ -53,5 +53,13 @@
 
 # 4 - Inversion d’un dictionnaire (clés ↔ valeurs)
 
-d = {"a": 1, "b": 2, "c": 3}
+# d = {"a": 1, "b": 2, "c": 3}
+
+# for key , value in list(d.items()):
+#     del d[key]
+#     d[value] = key
+
+# print(d)    
+
+# 5 - Compréhension de dictionnaire
 
