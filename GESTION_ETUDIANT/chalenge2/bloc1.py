@@ -42,7 +42,7 @@
 
 # 4 - Inverser une liste sans reverse() ni [::-1]
    
-# liste = [1, 2, 3, 4, 5]
+liste = [1, 2, 3, 4, 5]
 
 # def reverse(list):
 #    if not list:
@@ -59,10 +59,10 @@
 
 # def Fusionner(liste_a,liste_b):
 #     if not liste_a:
-#         return sorted(liste_a)
+#         return sorted(liste_b)
     
 #     if not liste_b:
-#         return sorted(liste_b)
+#         return sorted(liste_a)
     
 #     max_a = max(liste_a)
 #     max_b = max(liste_b)
