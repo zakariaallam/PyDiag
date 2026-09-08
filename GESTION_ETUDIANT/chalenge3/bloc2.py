@@ -26,6 +26,7 @@
 # traiter_liste_de_valeurs(["3", "9", "x", "5"])
 
 # 3 - Créer une exception personnalisée par héritage de Exception
+
 # class StockInsuffisantError(Exception):
 #     def __init__(self, produit, demande, disponible):
 #         message = (
@@ -55,3 +56,18 @@
 #     retirer_stock(stock, "bananes", 10)
 # except StockInsuffisantError as e:
 #     print(f"{e}")    
+
+# def test(mantant):
+    
+#     if mantant < 0:
+#         raise ValueError(f"nigative")
+    
+#     if mantant >1000:
+#          raise ValueError(f"depase")
+        
+# try:
+#     test(1001)
+# except ValueError as e:
+#     print(e)
+    
+                
